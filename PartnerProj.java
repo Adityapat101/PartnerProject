@@ -24,6 +24,28 @@ public class PartnerProj{
 	    return null;
 	}
 
+
+
+	public static Integer findFirstEvenWithNeighborSum(int[][] array) {
+	    for (int i = 0; i < array.length; i++) {
+	        for (int j = 0; j < array[i].length; j++) {
+	            int value = array[i][j];
+	            if (value % 2 == 0) {
+
+	                if (j > 0 && j < array[i].length - 1) {
+	                    int left = array[i][j - 1];
+	                    int right = array[i][j + 1];
+	                    if (left + right > 17) {
+	                        return value;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	    return null;
+}
+
+
     public static void main(String[] args) {
         int size = 5;
         int[][] result = createRandomSquareArray(size);
