@@ -12,6 +12,18 @@ public class PartnerProj{
         return array;
     }
 
+
+	public static Integer findFirstEven(int[][] array) {
+	    for (int i = 0; i < array.length; i++) {
+	        for (int j = 0; j < array[i].length; j++) {
+	            if (array[i][j] % 2 == 0) {
+	                return array[i][j];
+	            }
+	        }
+	    }
+	    return null;
+	}
+
     public static void main(String[] args) {
         int size = 5;
         int[][] result = createRandomSquareArray(size);
