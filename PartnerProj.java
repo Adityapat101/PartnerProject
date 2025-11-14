@@ -43,7 +43,33 @@ public class PartnerProj{
 	        }
 	    }
 	    return null;
-}
+	}
+
+
+	public static Integer findFirstOddWithFullNeighborSum(int[][] array) {
+	    for (int i = 1; i < array.length - 1; i++) {
+	        for (int j = 1; j < array[i].length - 1; j++) {
+
+	            int value = array[i][j];
+
+
+	            if (value % 2 != 0) {
+
+	                int above = array[i - 1][j];
+	                int below = array[i + 1][j];
+	                int left  = array[i][j - 1];
+	                int right = array[i][j + 1];
+
+	                int sum = above + below + left + right;
+
+	                if (sum > 33) {
+	                    return value;
+	                }
+	            }
+	        }
+	    }
+	    return null;
+	}
 
 
     public static void main(String[] args) {
